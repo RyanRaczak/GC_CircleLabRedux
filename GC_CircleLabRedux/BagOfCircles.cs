@@ -39,23 +39,21 @@ namespace GC_CircleLabRedux
             if (IsNum(input))
             {
                 Circle c = new Circle(double.Parse(input));
-                Console.WriteLine($"\nRadius: {Math.Round(c.Radius,2):n2}\tCircumference: {Math.Round(c.Circumference,2):n2}" +
-                    $"\tArea: {Math.Round(c.Area,2):n2}");
+                Console.WriteLine($"\nRadius: {c.Radius:n2}\tCircumference: {c.Circumference:n2}" +
+                    $"\tArea: {c.Area:n2}");
                 Circles.Add(c);
             }
         }
         public void DisplayBag()
         {
             //Displays all circles in list and how many
-            int circleCount = 0;
             Console.WriteLine("\n{0,-15}{1,15}{2,15}","Radius", "Circumference", "Area");
             Console.WriteLine("==============================================");
             foreach (var item in Circles)
             {
                 Console.WriteLine(item);
-                circleCount++;
             }
-            Console.WriteLine($"\nTotal Circles: {circleCount}");
+            Console.WriteLine($"\nTotal Circles: {Circles.Count}");
         }
 
     }
